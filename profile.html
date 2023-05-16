@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ad2c76d112.js"
+      crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <title>profile page Socialbook - puzon das</title>
+</head>
+<body>
+  <!---------- nav-bar ------------->
+  <nav>
+    <div class="nav-left">
+      <a href="index.html"><img src="images/facebooklogo.png" alt="" class="logo"></a>
+
+      <div class="searchBar">
+        <img src="images/search.png" alt="">
+        <input type="text" placeholder="search">
+      </div>
+    </div>
+    <div class="middel-nav">
+      <ul>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVR4nO3SvwpBURzA8cMgqzLfLEYZeAWbp7B5C6/gHWweQpHRamGSmGWT+lgU4fpz7y0Dnzrb73x/dToh/AxEmJ1PlHW8hpWLDRpZxVvYubdHO228g4N4R3SThHPoPQnf6iP/bryAgc8NUXwVL2EkuSnKcfEK5tJboHobr2MtO1s0rxcsZW8R91SphDd+0XcWhIRz/wU/+kSTB/fGSef+wisnZGnoi1oyZj0AAAAASUVORK5CYII="></li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChUlEQVR4nO2avWsUQRiHRxJjEAu/QfHgSkGwVyxFRVERYhWtAkEtTKwkf0C0i1hYyoUUamljIwoRQUyIJ4qIRu0Vi2iIWGh8wguzMBn37vZuc2G+HphmdmZ2fr/b953ZuVUqkUgkEolEI4A+4AgwCAx7Ugb1nPtUpwBbgJvAT/zlB3BDtLQrfi/wlnB4A+wpKn4jMEt4vAR6ixhwOafzQ2DUgdguWkb1nG2GixgwZ3W6qjwFGLG0zLTq0A/8Mzq8BzYoT5G5Ax8MPctNVwagYjl2T3mOaLA07WvWuGo1rq3BBAaA18AD4EDZ8Tq4f83SVF03A4DNwG9jvD/AHWBnmXF9MqBKPgvAdWBTmfF9NiBjHjhf5h6+G5DxFDhY5l6+GDANPCafruQH1wyo6fqjwLv1yA9OGmC8c8i29Xs384OzBmQA24HbOgTWPD84b0AGsB941MAE2cJOAbtVqAZkAKeBj03ywzkVsgFGfrimBdsstZMgkwF49gQQawgQaxKk9TL4JMhlkJg3QkS8FZ6O/WWIbsS5zwbMx3ogshDLkVg/8CvaQ1FBdm76f7n70R2Lu0AygPQE1JqGANADnNTb0jGr8QsH/uouW0SDyZiuF809YsAk8TIpBiwSL4tiQJ14eSUGTFiVdx2I224V0WYyIQac/a8yUIBbltYzUrkV+GtU1lWg6A81zGO2bdmFunVhhwoMffS2vCr+M3LywAUVGMDFhqEOHLcufgJ2qUCQ02Tgs6XxmNmgF/hiNfgKjDuQucsW0fAt5wde/dUocMr6RjBUJA+caPSoXLESRWjIanepVbwcBp4THs+AQ+0kjopsFIAhB+K40zKkNVQKC08kEolEQkXDCrheMIdgDvxJAAAAAElFTkSuQmCC"></li>
+        
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6klEQVR4nO2XL0gEQRTGp4gKItj8064ar4iczSJqtGrTaDTeRatNq9Ho2WwqpqtGi8pdE0RQsXwy+A6GZcadm5tlZ9fvB6/s+9h789s97p1ShBBCCCHEDYBNAC+oDs8ANlQs8HvDqvEUU0CZrMoMrVGv1UKAsswRcq2yAgC0ZIa1Ua/VRUAwFBALVJRYh+9Y7n1q9Lct/Z7RX/QZznGGBaPfs/S3jP6ZpX9cxOHvAUxKfxrAoyWznyPIV4B5wANLX3/2lPQnANxEkwD74QcAlnIy7wBmczK+AjpGfwbAmyXTNjLzjo11NAmwD/2tf2KMTAPA519fD8ldjSGgm8nYXvMPPYuRWQHwFSwBjidmvtaS6zpyzUyuP4aAQSbTdOQuM7k9Ry5fAhzUNaeqNjAFRBaliv6A1HOEEDeZr49eel6l+rKGDutBdnVddwCupfSucGHUuSwzuk7077KU3j2OjDrUe4fULoAdKb1WrxvVkt1A17IsZw35/zE3LBUKagIFhIKaQAGhoEC7se5X+hugIt87pRkVBXgQW25KD0lRgAex5ab0kBQFeBBbbkoPSVGAB7HlpvSQVIoCfGaigJq/Abf/WkAWCvBAhYISKGJGCggFJVDEjBQQCkqgiBkpIBSUQFICCCGEEKLqzA9bq1ur5b+KCwAAAABJRU5ErkJggg=="></li>
+
+        <li><img src="data:image/png;base64,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">
+
+</li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKElEQVR4nO2VMU4CQRSGNxZSygEkFGBssTWsrQeQY2jhFWiFgtpwAMFEvAYx3MBQ0uBG7Gz4zEumeJm83QwrTMN+yRQ7+97/7dvdZJKkouJoAJrALfAIjIAZsAA+gQz4dStzewtXM3I90tsMldWAoQvbF5I1AE6LxCI9FE950pM9T+qTicMSX3B42pa4F0F8Z4n7RuE10C0hyOvrW+J3v0rd2xWRpsb+zBIv9RMb97slJvWvl35oHdjqJzbEaYlJ/estcKZDb6yUf7zqon8j1eKHwAlCKeq71+Ix8XjW4o+I4rkWbyKKN1r8E1H8rcVvBYUroJUEIrWuJ49XXXyZczKtgU6oVOVduV6fLzmM/OIGMHHfW9Z0l0kNeVumU3kvwHnZvIqKJJQ/UZLUbtVXMREAAAAASUVORK5CYII=">
+
+</li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="nav-right-icons">
+        <ul>
+          <li><img src="images/manu-icon.png" alt=""></li>
+          <li><img src="images/message-icon.png" alt=""></li>
+          <li><img src="images/notifation-icon.png" alt=""></li>
+        </ul>
+      </div>
+      <div class="nav-user-icons online" onclick="settingManuToggel()">
+        <img src="images/profile-pic.png" alt="">
+      </div>
+    </div>
+
+    <!---------- profile-dropdown-mane ------------->
+    <div class="profile-drop-manu">
+      <div class="profile-drop-manu-innner">
+          <div class="manu-inner-box">
+            <div class="user-profile hover-effact">
+              <div class="profile-img">
+                <img src="images/profile-pic.png" alt="">
+                <div>
+                  <p>puzon das</p>
+                </div>
+              </div>
+              <div>
+                <i class="fa-regular fa-circle-user"></i>
+              </div>
+            </div>
+            <hr>
+            <div class="user-profile hover-effact">
+              <div class="profile-img">
+                <div>
+                  <a href="#">See Your profile</a>
+                </div>
+              </div>
+              <div>
+                 <div class="rad">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="user-profile hover-effact">
+              <div class="profile-img">
+                <div>
+                  <a href="#" style="color: #626262;">Dark Mode</a>
+                </div>
+              </div>
+              <div id="dark-mode">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="profile-manu-link">
+          <img src="images/setting.png" class="setting-icons">
+          <a href="#">Setting & privicy <img src="images/arrow.png" width="10px"></a>
+        </div>
+        <div class="profile-manu-link">
+          <img src="images/help.png" class="setting-icons">
+          <a href="#">Hapl & Support <img src="images/arrow.png" width="10px"></a>
+        </div>
+        <div class="profile-manu-link">
+          <img src="images/display.png" class="setting-icons">
+          <a href="#">display & Accessibilty <img src="images/arrow.png" width="10px"></a>
+        </div>
+        <div class="profile-manu-link">
+          <img src="images/feedback.png" class="setting-icons">
+          <a href="#">Give Feedback <img src="images/arrow.png" width="10px"></a>
+        </div>
+        <div class="profile-manu-link">
+          <img src="images/logout.png" class="setting-icons">
+          <a href="#">Logout <img src="images/arrow.png" width="10px"></a>
+        </div>
+        <p class="manu-text">Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  ·   · Meta © 2023</p>
+      </div>
+    </div>
+  </nav>
+  <!---------- nav-bar End ------------->
+
+
+  <!---------- profile page ------------->
+
+  <div class="profile-container">
+    <div class="left-side"></div>
+    <div class="middel-side">
+      <img src="images/cover.png" class="cover-img">
+
+    <div class="profile-details">
+      <div class="profile-left">
+        <div class="pd-row">
+          <img src="images/profile.png" class="pd-img">
+          <a href=""><img src="images/camra-icon.png" class="camra-icon"></a>
+          <div>
+            <h3>Puzon Das</h3>
+            <p>2159 Friends</p>
+
+            <img src="images/member-1.png" alt="">
+            <img src="images/member-2.png" alt="">
+            <img src="images/member-3.png" alt="">
+            <img src="images/member-4.png" alt="">
+            <img src="images/member-5.png" alt="">
+            <img src="images/member-6.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-right">
+        <button type="button" class="button-color"><i class="fa-solid fa-plus"></i> Add to Story</button>
+        <button type="button"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+        <button type="button"><i class="fa-solid fa-angle-down"></i> </button>
+      </div>
+    </div>
+
+    <!------------ profile manu --------->
+    
+      <div class="profile-manu-bar">
+        <div class="profile-left-manu">
+          <ul>
+            <li class=" active"><a href="#">Post</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Friens</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Check-ins</a></li>
+            <li onclick="profileManu()"><a href="#">More <i class="fa-sharp fa-solid fa-caret-down"></i></a>
+
+              <div class="drop-down">
+                <ul >
+                  <li><a href="#">Sport</a></li>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Movies</a></li>
+                  <li><a href="#">TV Shows</a></li>
+                  <li><a href="#">Books</a></li>
+                  <li><a href="#">Likes</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Questions</a></li>
+                  <li><a href="#">Reviews Given</a></li>
+                  <li><a href="#">Groups</a></li>
+              </ul>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="profile-right-manu">
+          <button type="button" onclick="profileRightManu()"><i class="fa-solid fa-ellipsis"></i>
+            <div class="profile-right-drop-down">
+                <ul >
+                  <li><a href="#"><img src="images/View As.png"> View As</a></li>
+                  <li><a href="#"><img src="images/Search1.png"> Search</a></li>
+                  <li><a href="#"><img src="images/Account Status.png"> Account Status</a></li>
+                  <li><a href="#"><img src="images/Archive.png"> Archive</a></li>
+                  <li><a href="#"><img src="images/Story archive.png"> Story archive</a></li>
+                  <li><a href="#"><img src="images/Activity log.png"> Activity log</a></li>
+                  <li><a href="#"><img src="images/Profile and tagging settings.png"> Profile and tagging settings</a></li>
+                  <li><a href="#"><img src="images/Unlock profile.png"> Unlock profile</a></li>
+                  
+              </ul>
+              </div>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="right-side"></div>
+  </div>
+
+
+  <div class="profile-info">
+    
+
+    <div class="info-col">
+
+      <div class="profile-lock">
+        <a href="#"><i class="fa-solid fa-unlock-keyhole"></i></a>
+        <div>
+          <h3>You locked your profile</h3>
+          <p>Learn more</p>
+        </div>
+      </div>
+
+      <div class="profile-intro">
+        <h2>Intro</h2>
+        <button type="button"> Add bio </button>
+
+        <div class="intor-ditalis">
+          <ul>
+            <li><i class="fa-solid fa-briefcase"></i> Works at <span>Student Of The Year</span></li>
+            <li><i class="fa-solid fa-graduation-cap"></i> Studied at Govt. Zia Mohila College, Feni</li>
+            <li><i class="fa-solid fa-house-circle-check"></i> Lives in <span>Feni, Barisāl, Bangladesh</span></li>
+            <li><i class="fa-sharp fa-solid fa-location-dot"></i> From <span> Feni, Barisāl, Bangladesh</span></li>
+            <li><i class="fa-solid fa-heart"></i> Single</li>
+          </ul>
+        </div>
+
+        <div class="intro-buttom">
+          
+            <a><button type="button"> Edit Details </button></a>
+            <a><button type="button"> Add Habbies </button></a>
+            <a><button type="button"> Add Featured </button></a>
+         
+        </div>
+      </div>
+
+      <div class="intro-photos">
+          <div class="photos-top">
+            <h3>Photos</h3>
+            <p>See All photos</p>
+          </div>
+          <div class="intro-bottom">
+            <img src="images/feed-image-1.png" alt="">
+            <img src="images/feed-image-2.png" alt="">
+            <img src="images/feed-image-3.png" alt="">
+            <img src="images/feed-image-4.png" alt="">
+            <img src="images/feed-image-5.png" alt="">
+            <img src="images/feed-image-1.png" alt="">
+          </div>
+        </div>
+
+
+        <div class="intro-friends">
+          <div class="friends-top">
+            <h3>Friends</h3>
+            <p>See All photos</p>
+          </div>
+          <p>306 friends</p>
+          <div class="friends-bottom">
+            <a href="#"><img src="images/member-1.png" alt="">Ankus Das
+
+              <div class="profile-short-hover">
+              <div class="short-hover-top">
+                <img src="images/profile.png">
+                <div>
+                  <h3>Arohi Das</h3>
+                  <h5><i class="fa-solid fa-user-group"></i> 1 mutual friend: <span>Puja Roy</span></h5>
+                  <h5><i class="fa-solid fa-house-circle-check"></i> Lives in  <span>Feni, Barisāl, Bangladesh</span></h5>
+                </div>
+              </div>
+              <div class="short-hover-bottom">
+                <div class="profile-right">
+                  <button type="button" class="button-color"><i class="fa-solid fa-plus"></i> Add to Story</button>
+                  <button type="button"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+                  <button type="button"><i class="fa-solid fa-angle-down"></i> </button>
+                </div>
+              </div>
+            </div>
+            </a>
+            <a href="#"><img src="images/member-2.png" alt="">Puja Pb
+            
+              <div class="profile-short-hover">
+              <div class="short-hover-top">
+                <img src="images/profile.png">
+                <div>
+                  <h3>Arohi Das</h3>
+                  <h5><i class="fa-solid fa-user-group"></i> 1 mutual friend: <span>Puja Roy</span></h5>
+                  <h5><i class="fa-solid fa-house-circle-check"></i> Lives in  <span>Feni, Barisāl, Bangladesh</span></h5>
+                </div>
+              </div>
+              <div class="short-hover-bottom">
+                <div class="profile-right">
+                  <button type="button" class="button-color"><i class="fa-solid fa-plus"></i> Add to Story</button>
+                  <button type="button"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+                  <button type="button"><i class="fa-solid fa-angle-down"></i> </button>
+                </div>
+              </div>
+            </div>
+            
+            </a>
+            <a href="#"><img src="images/member-3.png" alt="">Fuja Roy</a>
+            <a href="#"><img src="images/member-4.png" alt="">Arohi Das</a>
+            <a href="#"><img src="images/member-5.png" alt="">Rittika Mojumder</a>
+            <a href="#"><img src="images/member-6.png" alt="">Nishi Das</a>
+            <a href="#"><img src="images/member-7.png" alt="">অনুরাধা দাশ</a>
+            <a href="#"><img src="images/member-8.png" alt="">Sharna Datta Sruti</a>
+            <a href="#"><img src="images/member-9.png" alt="">Anamika Vlog</a>
+          </div>
+        </div>
+
+        <p>Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  ·   · Meta © 2023</p>
+
+        
+
+    </div>
+    <div class="post-col">
+
+      <!---- write input ----->
+      <div class="write-post-container">
+        <div class="user-profile">
+          <div class="profile-img">
+            <img src="images/profile-pic.png" alt="">
+            <div>
+              <p>puzon das</p>
+              <small>Public <i class="fa-sharp fa-solid fa-caret-down"></i></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-input-container">
+          <textarea rows="3" placeholder="What's On your mind,Puzon?"></textarea>
+
+          <div class="add-post-link">
+            <a href="#"><img src="images/live-video.png" alt="">Live Video</a>
+            <a href="#"><img src="images/photo.png" alt="">Photo Video</a>
+            <a href="#"><img src="images/feeling.png" alt="">feeling/Activity</a>
+          </div>
+        </div>
+      </div>
+
+      <!-------------- start post ------------>
+      <div class="post-continer">
+        <div class="user-profile">
+          <div class="profile-img">
+          <img src="images/profile-pic.png" alt="">
+          <div>
+            <p>puzon das</p>
+          <span>October 5, 2022 <i class="fa-solid fa-user-group"></i></span>
+          </div>
+        </div>
+        <div class="icon-post">
+          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        </div>
+        <p class="post-text">পটুয়াখালীর দশমিনায় বাবার লা* শ বাড়িতে রেখে এসএসসি পরীক্ষা দিলেন ছেলে 🙂
+        ওর জন্য <span>সবাই দোয়া করবেন!</span> 🤲 <a href="#">#facebook </a><a href="#">#socialmedia</a></p>
+        <img src="images/feed-image-1.png" alt="" class="post-img">
+
+        <div class="post-row">
+          <div class="activity-icon">
+
+            <div><img src="images/like-blue.png" alt=""><img src="images/love.png" alt=""><span> 5.2K</span></div>
+          </div>
+
+          <div class="post-comnt-img">
+
+              <div>260 <img src="images/comments.png" alt=""></div>
+              <div>45 <img src="images/share.png" alt=""></div>
+
+          </div>
+        </div>
+
+        <div class="post-react-icons">
+          <div><img src="images/like.png" alt=""> Like</div>
+          <div><img src="images/comments.png" alt=""> Comments</div>
+          <div><img src="images/share.png" alt=""> Share</div>
+        </div>
+      </div>
+
+      <div class="post-continer">
+        <div class="user-profile">
+          <div class="profile-img">
+          <img src="images/member-1.png" alt="">
+          <div>
+            <p>Prémâ Ñáth</p>
+          <span>April 22 at 7:22 PM <i class="fa-solid fa-user-group"></i></span>
+          </div>
+        </div>
+        <div class="icon-post">
+          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        </div>
+        <p class="post-text">রোমান গেলিক যুদ্ধের সময় একটি বর্শার মাথা এভাবেই একটি হাড়ের মধ্য দিয়ে গিয়েছিল। এটি 2070 বছর  🤯 <span>পরেও হাড়ে রয়ে গেছে।</span> 🤲 <a href="#">#facebook </a><a href="#">#socialmedia</a></p>
+        <img src="images/feed-image-2.png" alt="" class="post-img">
+
+        <div class="post-row">
+          <div class="activity-icon">
+
+            <div><img src="images/like-blue.png" alt=""><img src="images/love.png" alt=""><span> 1.2K</span></div>
+          </div>
+
+          <div class="post-comnt-img">
+
+              <div>120 <img src="images/comments.png" alt=""></div>
+              <div>35 <img src="images/share.png" alt=""></div>
+
+          </div>
+        </div>
+
+        <div class="post-react-icons">
+          <div><img src="images/like.png" alt=""> Like</div>
+          <div><img src="images/comments.png" alt=""> Comments</div>
+          <div><img src="images/share.png" alt=""> Share</div>
+        </div>
+      </div>
+
+
+      <div class="post-continer">
+        <div class="user-profile">
+          <div class="profile-img">
+          <img src="images/member-2.png" alt="">
+          <div>
+            <p>Prite Banik</p>
+          <span>April 12 at 9:22 PM <i class="fa-solid fa-user-group"></i></span>
+          </div>
+        </div>
+        <div class="icon-post">
+          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        </div>
+        <p class="post-text">২০২৩ পরীক্ষাথীদের বিদায় হয়ে গেলো🥺🙂
+        সবাই আর এক সাথে মিলে সে মজা আনন্দ করা হবে না...স্যার ম্যডামদের সাথে পড়ার ফাঁকে মজা করা আর হবেনা <span>দেখতে দেখতে ১০বছর এর স্কুল  জীবন শেষ..</span> 🤲 <a href="#">#facebook </a><a href="#">#socialmedia</a></p>
+        <img src="images/feed-image-3.png" alt="" class="post-img">
+
+        <div class="post-row">
+          <div class="activity-icon">
+
+            <div><img src="images/like-blue.png" alt=""><img src="images/love.png" alt=""><span> 453</span></div>
+          </div>
+
+          <div class="post-comnt-img">
+
+              <div>100  <img src="images/comments.png" alt=""></div>
+              <div>5  <img src="images/share.png" alt=""></div>
+
+          </div>
+        </div>
+
+        <div class="post-react-icons">
+          <div><img src="images/like.png" alt=""> Like</div>
+          <div><img src="images/comments.png" alt=""> Comments</div>
+          <div><img src="images/share.png" alt=""> Share</div>
+        </div>
+      </div>
+
+
+      <div class="post-continer">
+        <div class="user-profile">
+          <div class="profile-img">
+          <img src="images/member-3.png" alt="">
+          <div>
+            <p>10 Minute School</p>
+          <span>Sponsored <i class="fa-solid fa-user-group"></i></span>
+          </div>
+        </div>
+        <div class="icon-post">
+          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        </div>
+        <p class="post-text">জয়িতা ব্যানার্জির কাছে ফ্রিল্যান্সিং এর A-Z শিখুন টেন মিনিট স্কুলের 'ঘরে বসে Freelancing' কোর্সে । 
+        ➡️ <a href="#">https://10ms.io/gbf-55 </a>
+        ফ্রিল্যান্স মার্কেটপ্লেসের চাহিদাসম্পন্ন সব স্কিল শিখে প্রোফাইল তৈরি থেকে শুরু করে পেমেন্ট পাওয়া পর্যন্ত সকল গাইডলাইন পেয়ে যাবেন একটি কোর্সে, ঘরে বসেই! <span>… See more</span></span> 🤲 <a href="#">#facebook </a><a href="#">#socialmedia</a></p>
+        <img src="images/feed-image-6.png" alt="" class="post-img">
+
+        <div class="post-row">
+          <div class="activity-icon">
+
+            <div><img src="images/like-blue.png" alt=""><img src="images/love.png" alt=""><span> 5.2K</span></div>
+          </div>
+
+          <div class="post-comnt-img">
+
+              <div>260 <img src="images/comments.png" alt=""></div>
+              <div>45 <img src="images/share.png" alt=""></div>
+
+          </div>
+        </div>
+
+        <div class="post-react-icons">
+          <div><img src="images/like.png" alt=""> Like</div>
+          <div><img src="images/comments.png" alt=""> Comments</div>
+          <div><img src="images/share.png" alt=""> Share</div>
+        </div>
+      </div>
+
+      <div class="post-continer">
+        <div class="user-profile">
+          <div class="profile-img">
+          <img src="images/member-6.png" alt="">
+          <div>
+            <p>BWM SHOP (আপনার বিশ্বস্ত ক্রয় এবং বিক্রয় কেন্দ্র)</p>
+          <span>Hridoy Sarker <i class="fa-solid fa-user-group"></i></span>
+          </div>
+        </div>
+        <div class="icon-post">
+          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        </div>
+        <p class="post-text">1.2 মিলিয়ন মেম্বার এর গ্রুপ ভাড়া দিবো 😍😍
+        সুপার রীচ ওয়ালা গ্রুপ 😍😍 <a href="#">#webdeal </a><a href="#">#socialmedia</a></p>
+        <img src="images/feed-image-7.png" alt="" class="post-img">
+
+        <div class="post-row">
+          <div class="activity-icon">
+
+            <div><img src="images/like-blue.png" alt=""><img src="images/love.png" alt=""><span> 5.2K</span></div>
+          </div>
+
+          <div class="post-comnt-img">
+
+              <div>260 <img src="images/comments.png" alt=""></div>
+              <div>45 <img src="images/share.png" alt=""></div>
+
+          </div>
+        </div>
+
+        <div class="post-react-icons">
+          <div><img src="images/like.png" alt=""> Like</div>
+          <div><img src="images/comments.png" alt=""> Comments</div>
+          <div><img src="images/share.png" alt=""> Share</div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
